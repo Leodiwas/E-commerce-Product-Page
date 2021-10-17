@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@500;700&display=swap');
+
+:root{
+    /* Primary Colors */
+    --color--Orange: hsl(26, 100%, 55%) ;
+    --color-Pale-orange: hsl(25, 100%, 94%) ;
+
+    /* Neutral Colors */
+    --color-Very-vark-blue: hsl(220, 13%, 13%);
+    --color-Dark-grayish-blue: hsl(219, 9%, 45%);
+    --color-Grayish-blue: hsl(220, 14%, 75%);
+    --color-Light-grayish-blue: hsl(223, 64%, 98%);
+    --color-White: hsl(0, 0%, 100%);
+    --color-Black/*(with 75% opacity for lightbox background)*/: hsl(0, 0%, 0%);
+
+    /* Paragraph Font Size */
+    --font-paragraph: 16px ;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ..............................Default Stylings............................ */
+html, body{
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+.container{
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+}
+
+.seperator{
+    height: 1px;
+    background: var(--color-Grayish-blue);
+    border: none;
+}
+
+/* ................................CSS Styling Starts.................... */
+
+.navbar-contents{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 20px;
+}
+.navbar-logo_navlinks{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.navbar-menu{
+    display: flex;
+    gap: 24px;
+}
+.navbar-menu li {
+    list-style-type: none;
+    position: relative;
+}
+.navbar-menu li a {
+    text-decoration: none;
+    color: var(--color-Grayish-blue);
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.5s ease;
+}
+.navbar-menu li a::after{
+    content: " ";
+    background: var(--color--Orange);
+    height: 3px;
+    width: 0;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    transition: all 0.5s ease;
+}
+.navbar-menu li a:hover::after{
+    width: 100%;
+}
+.navbar-icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-icons > .navbar-avatar-img_container{
+    width: 36%;
+} 
+
+/* .........................Main Styling............................. */
+
+.main{
+    margin-block: 100px;
+}
+.main-contents{
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 100px;
+}
+
+/* .............main-img-gallery............. */
+.main-img-gallery{
+    width: 50%;
+}
+.main-img{
+    margin-bottom: 30px;
+}
+.full-img-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1600px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+.full-img-container > img{
+    width: 40%;
+    border-radius: 10px;
+}
+.full-img-container > .btn{
+    position: relative;
+}
+.full-img-container > .btn > i{
+    font-size: 30px;
+    position: absolute;
+    color: var(--color--Orange);
+    bottom: 310px;
+    right: 6px;
+    cursor: pointer;
+}
+.main-img > img{
+    border-radius: 10px;
+    transition:  all 0.5s ease;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px 2px var(--color-Dark-grayish-blue);
+}
+.main-img > img:hover{
+    transform: scale(1.05);
+}
+.sub-img {
+    display: flex;
+    gap: 30px;
+    width: 20%;
+}
+.sub-img > img{
+    border-radius: 10px;
+    transition:  all 0.5s ease;
+    cursor: pointer ;
+    box-shadow: 2px 2px 8px 2px var(--color-Dark-grayish-blue);
+}
+
+.sub-img > img:hover{
+    transform: scale(1.09);
+}
+
+
+/* ......................main-info-div................ */
+.main-info-div{
+    width: 50%;
+    padding: 40px 0;
+}
+.title{
+    color: var(--color--Orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+}
+.sub-title{
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 44px;
+}
+.discription{
+    font-size: var(--font-paragraph);
+    color: var(--color-Grayish-blue);
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.price{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.main-price{
+    font-size: 28px;
+    font-weight: 700;
+}
+.price-discount{
+    font-weight: 700;
+    font-size: 16px;
+    background: var(--color-Pale-orange);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--color--Orange);
+}
+.actual-price-cut{
+    color: var(--color-Grayish-blue);
+    font-weight: 700;
+}
+.quan-cart{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+.quantity{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-Light-grayish-blue);
+    padding: 16px ;
+    border-radius: 10px;
+    cursor: pointer;
+}   
+.add-to-cart{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px ;
+    background: var(--color--Orange);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.add-to-cart > a{
+    text-decoration: none;
+    display: flex ;
+    gap: 20px;
+}
+.cart-title{
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+}
+
+
+
+
+
+
+
+/* ................................Media Queries.............................................. */
+@media screen and (max-width: 375px){
+
+}
+
